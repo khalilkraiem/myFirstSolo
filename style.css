@@ -162,6 +162,18 @@ input{
     margin:0px;
     color:rebeccapurple
 }
+#zoneArticleA{
+    width: 1500px;
+    height: 500px;
+    margin:0px;
+    color:rebeccapurple
+}
+#zoneArticleb{
+    width: 1500px;
+    height: 500px;
+    margin:0px;
+    color:rebeccapurple
+}
 #art1{
     position: absolute;
     left: 100px;
@@ -178,19 +190,19 @@ input{
     
 }#art4{
     position: absolute;
-    top: 2800px;
+    
     left: 100px;
     margin: 0px;
     
 }#art5{
     position: absolute;
-    top: 2800px;
+    
     left: 600px;
     margin: 0px;
 }
 #art6{
     position: absolute;
-    top: 2800px;
+    
     left: 1100px;
     margin: 0px;
 }

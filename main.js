@@ -30,14 +30,24 @@ function login(){
 }
 function creatperson(){
     console.log("yalla")
+    
     var name=$('#namecdmin').val()
     var mail=$('#mailcdmin').val() 
     var telephone=$("#telcdmin").val()
     var password=$("#pwc").val()
     var username=$('#userc').val()
-    var client=makeClient(name,mail,telephone,password,username)
-    clients.push(client)
-    console.log(clients)
+    if(name!==''&&telephone!==''&&password!==''&&username!==''&&mail.includes("@")==true){
+        var client=makeclient($('#namecdmin').val(),$('#mailcdmin').val(),$("#telcdmin").val(),$("#pwc").val(),$('#userc').val())
+            clients.push(client)
+            console.log(clients)
+            $("#divHome").hide()
+            $("#divClient").show()
+    }else{ 
+        alert("error try again") 
+        }
+    
+    
+    
 }
 //////////Principal Div///////////
 function divhome(){
@@ -117,6 +127,8 @@ function barreclient(){
 }
 function zonearticle(){
     var zoneArticle=$('<div id="zoneArticle"></div>')
+    var zoneArticleA=$('<div id="zoneArticleA"></div>')
+    var zoneArticleB=$('<div id="zoneArticleB"></div>')
 
     var divArticle1=divarticle()
     $(divArticle1).attr('id','art1')
@@ -131,7 +143,9 @@ function zonearticle(){
     var divArticle6=divarticle()
     $(divArticle6).attr('id','art6')
 
-    zoneArticle.append(divArticle1,divArticle2,divArticle3,divArticle4,divArticle5,divArticle6)
+    zoneArticleA.append(divArticle1,divArticle2,divArticle3)
+    zoneArticleB.append(divArticle4,divArticle5,divArticle6)
+    zoneArticle.append(zoneArticleA,zoneArticleB)
 
     return zoneArticle
 
@@ -140,12 +154,12 @@ function zonearticle(){
 
 function divcreatClient(){
     var divCreatclient=$('<div id="divCreatclient"><input id="</div>')
-    var name=$('<input id="#namecdmin">name</input>')
-    var mail=$('<input id="#mailcdmin">mail</input>') 
-    var telephone=$('<input id="#telcdmin">telephone</input>')
-    var password=$('<input id="#pwc" type="password">password</input>')
-    var username=$('<input id="#userc">username</input>')
-    var button=$("<button id='creatcl' onclick='creatperson'>join us</button>")
+    var name=$("<input id=namecdmin type=text>")
+    var mail=$('<input id="mailcdmin"type="text">mail</input>') 
+    var telephone=$('<input id="telcdmin" type="text">telephone</input>')
+    var password=$('<input id="pwc" type="password">password</input>')
+    var username=$('<input id="userc" type="text">username</input>')
+    var button=$("<button id='creatcl' onclick='creatperson()'>join us</button>")
     divCreatclient.append(name,mail,telephone,password,username,button)
     return divCreatclient
 
@@ -222,7 +236,7 @@ function modifierPrice(price){
 function inc(newQuatity){
     this.quatity=this.quatity+newQuatity
 }
-function makeClient(name,mail,telephone,password,username){
+function makeclient(name,mail,telephone,password,username){
     return{
         name:name,
         mail:mail,
