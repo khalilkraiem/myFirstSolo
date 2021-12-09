@@ -1,0 +1,198 @@
+
+.page{
+    background-color: rgb(255, 255, 255);
+    background-image: url("./images/white-desk-with-professional-camera-and-accessoires-on-it.jpg");
+    background-size: 120%;
+    
+    width:1500px;
+    height:1080px;
+    position: absolute;
+    
+    
+}
+.formulaire{
+    /* background-color: rgba(86, 127, 240, 0.733);  */
+    background-color: rgb(255, 255, 255);
+    /* background-image: url("./images/set-up-studio-shoot_53876-144951.jpg"); */
+    background-size:100% ;
+    background-repeat: no-repeat;
+
+   
+
+    border: 2px solid;
+    width: 500px;
+    height: 600px;
+    margin:0;
+    position: absolute;
+    top:200px;
+    
+    right:35%;       
+}
+input{
+    width:450px;
+    height: 40px;
+    text-align: center;
+    padding: auto;
+    margin: 25px;
+}
+.box{
+    background-color: rgb(253, 253, 253); 
+    /* background-image: url("./images/set-up-studio-shoot_53876-144951.jpg"); */
+    background-size: 100%;
+    border: 2px solid;
+    width: 300px;
+    height: 300px;      
+}
+#singin{
+ /* background-color: rgba(86, 127, 240, 0.733);  */
+ background-color: rgb(255, 255, 255);
+ background-image: url("./images/close-up-of-vintage-camera-on-white-background.jpg");
+ background-size:100% ;
+ background-repeat: no-repeat;
+ border: 2px solid;
+ width: 500px;
+ height: 300px;
+ margin:0;
+ position: absolute;
+ top:200px;
+
+ right:35%;  }
+
+/*admin page*/
+
+#barreadmin{
+    
+    width: 1500px;
+    height: 50px;
+    background-color: rgb(66, 65, 65);
+    margin: 0px;
+    border: 1px solid;
+}
+#homeTitle{
+    border: 1px solid;
+    width: 100px;
+    height: 50px;
+    margin: 0px;
+    position:absolute;
+    color:rgb(255, 255, 255);
+    left: 50px;
+
+}
+#taskBarre{
+    border: 1px solid;
+    width: 700px;
+    height: 50px;
+    margin: 0px;
+    position:absolute;
+    color:rgb(255, 255, 255);
+    left: 300px;
+}
+#profilTitle{
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    color: rgb(10 220, 63);
+    margin: 0px;
+    position:absolute;
+    color:rgb(255, 255, 255);
+    left: 1200px;
+}
+#goOut {
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    position:absolute;
+    
+    left: 1400px;
+}
+/*client page*/
+
+#barreclient{
+    
+    width: 1500px;
+    height: 50px;
+    background-color: rgb(66, 65, 65);
+    margin: 0px;
+    border: 1px solid;
+}
+#homeTitle2{
+    border: 1px solid;
+    width: 200px;
+    height: 50px;
+    margin: 0px;
+    position:absolute;
+    color: rgb(251, 251, 251);
+    left: 50px;
+
+}
+#catecories{
+    border: 1px solid;
+    width: 700px;
+    height: 50px;
+    margin: 0px;
+    position:absolute;
+    color: rgb(255, 255, 255);
+    left: 300px;
+}
+#profilTitle2{
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    position:absolute;
+    
+    left: 1200px;
+}
+#goOut2 {
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    position:absolute;
+    
+    left: 1400px;
+}
+#zoneArticle{
+    width: 1500px;
+    height: 1000px;
+    margin:0px;
+    color:rebeccapurple
+}
+#art1{
+    position: absolute;
+    left: 100px;
+    margin: 0px;
+}
+#art2{
+    position: absolute;
+    left: 600px;
+    margin: 0px;
+}#art3{
+    position: absolute;
+    left: 1100px;
+    margin: 0px;
+    
+}#art4{
+    position: absolute;
+    top: 2800px;
+    left: 100px;
+    margin: 0px;
+    
+}#art5{
+    position: absolute;
+    top: 2800px;
+    left: 600px;
+    margin: 0px;
+}
+#art6{
+    position: absolute;
+    top: 2800px;
+    left: 1100px;
+    margin: 0px;
+}
+
+
