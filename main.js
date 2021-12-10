@@ -48,7 +48,7 @@ function creatperson(){
             $("#divCreatclient").hide();
             $("#divClient").show()
             $('#profilTitle2').html(username)
-            home()
+            
     }else{ 
         alert("error try again") 
         }  
@@ -64,12 +64,7 @@ function login2(){
 $('#signin').show();    
 $("#divCreatclient").hide();
 }
-function home(){
-    
 
-    
-
-}
 //////////Principal Div///////////
 function divhome(){
     var divHome=$('<div id="divHome"></div>')
@@ -170,7 +165,7 @@ function zonearticle(){
 
 function divcreatClient(){
     var divCreatclient=$('<div id="divCreatclient"><input id="</div>')
-    var name=$("<input id=namecdmin type=text>")
+    var name=$("<input id=namecdmin type=text>Name</input>")
     var mail=$('<input id="mailcdmin"type="text">mail</input>') 
     var telephone=$('<input id="telcdmin" type="text">telephone</input>')
     var password=$('<input id="pwc" type="password">password</input>')
@@ -250,6 +245,8 @@ article4=makeArticle("sony","NX5","full frame camera","camescope",3000,6)
 article5=makeArticle("godox","660TT","full frame camera","flash",3000,6)
 article6=makeArticle("aputure","TX1S","full frame camera","trigger",3000,6)
 var articles=[article1,article2,article3,article4,article5,article6]
+
+var listBuy=[]
 function makeArticle(brand,model,descreption,category,price,quantity){
     return{
         brand:brand,
