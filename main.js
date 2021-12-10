@@ -24,9 +24,12 @@ function login(){
     x= true
     }
     if (x){
-        $('#divClient').show()
-    }
+        $("#divHome").hide()
+        $("#divClient").show()
+        $('#profilTitle2').html(user)
+    }else{
     alert("go again")
+    }
 }
 function creatperson(){
     console.log("yalla")
@@ -41,13 +44,31 @@ function creatperson(){
             clients.push(client)
             console.log(clients)
             $("#divHome").hide()
+            $('#signin').show();    
+            $("#divCreatclient").hide();
             $("#divClient").show()
+            $('#profilTitle2').html(username)
+            home()
     }else{ 
         alert("error try again") 
-        }
+        }  
+}
+function goOut(){
+    console.log('out')
+    $("#divHome").show()
+    $("#divClient").hide()
     
+
+}
+function login2(){
+$('#signin').show();    
+$("#divCreatclient").hide();
+}
+function home(){
     
+
     
+
 }
 //////////Principal Div///////////
 function divhome(){
@@ -114,10 +135,10 @@ function barreadmin(){
 function barreclient(){
     var barre=$('<div id="barreclient"></div>')    
     
-    var homeTitle=('<h1 id="homeTitle2">HOME</h1>')
-    var catecories=('<div id="catecories" >CATEGORIES</div>')
+    var homeTitle=('<h1 id="homeTitle2" onclick="home()">HOME</h1>')
+    var catecories=('<input type= id="catecories" >CATEGORIES</div>')
     var profilTitle=('<div id="profilTitle2">profil</div>')
-    var goOut=('<h2 id="goOut2">Go Out</h2>')
+    var goOut=('<h2 id="goOut2" onclick="goOut()">Go Out</h2>')
    
     $(barre).append(homeTitle)
     $(barre).append(catecories)
@@ -129,22 +150,17 @@ function zonearticle(){
     var zoneArticle=$('<div id="zoneArticle"></div>')
     var zoneArticleA=$('<div id="zoneArticleA"></div>')
     var zoneArticleB=$('<div id="zoneArticleB"></div>')
-
-    var divArticle1=divarticle()
-    $(divArticle1).attr('id','art1')
-    var divArticle2=divarticle()
-    $(divArticle2).attr('id','art2')
-    var divArticle3=divarticle()
-    $(divArticle3).attr('id','art3')
-    var divArticle4=divarticle()
-    $(divArticle4).attr('id','art4')
-    var divArticle5=divarticle()
-    $(divArticle5).attr('id','art5')
-    var divArticle6=divarticle()
-    $(divArticle6).attr('id','art6')
-
-    zoneArticleA.append(divArticle1,divArticle2,divArticle3)
-    zoneArticleB.append(divArticle4,divArticle5,divArticle6)
+    for(var i=0;i<3;i++){
+    var divArticle=divarticle(i)
+    $(divArticle).attr('class','art1')
+    zoneArticleA.append(divArticle)
+    }
+    for(var i=3;i<6;i++){
+    var divArticle=divarticle(i)
+    $(divArticle).attr('class','art2')
+    zoneArticleB.append(divArticle)
+    }
+    
     zoneArticle.append(zoneArticleA,zoneArticleB)
 
     return zoneArticle
@@ -160,12 +176,13 @@ function divcreatClient(){
     var password=$('<input id="pwc" type="password">password</input>')
     var username=$('<input id="userc" type="text">username</input>')
     var button=$("<button id='creatcl' onclick='creatperson()'>join us</button>")
-    divCreatclient.append(name,mail,telephone,password,username,button)
+    var button2=$("<button id='login2' onclick='login2()'>Log In</button>")
+    divCreatclient.append(name,mail,telephone,password,username,button,button2)
     return divCreatclient
 
 }
 function divcreatAdmin(){
-    divCreatAdmin=$('<div id="divCreatAdmin"><input id="</div>')
+    var divCreatAdmin=$('<div id="divCreatAdmin"><input id="</div>')
     var name=$('#nameAdmin').val()
     var mail=$('#mailAdmin').val() 
     telephone=$("#telAdmin").val()
@@ -174,20 +191,20 @@ function divcreatAdmin(){
 
     divCreatAdmin= makeAdmin(name,mail,telephone,password,username)
 }
-function divcreatProduct(){
-    var button=('<#addProd')
-    button.click(function(){
-    var brand=$("#brand").val()
-    var model=$('#model').val()
-    var descreption=$("#desc").val()
-    var category=$("#cat").val()
-    var price=$('#price').val()
+// function divcreatProduct(){
+//     var button=('<#addProd')
+//     button.click(function(){
+//     var brand=$("#brand").val()
+//     var model=$('#model').val()
+//     var descreption=$("#desc").val()
+//     var category=$("#cat").val()
+//     var price=$('#price').val()
     
-    article=makeArticle(brand,model,descreption,category,price,quantity)
-    })
-    articles.push(article)
+//     article=makeArticle(brand,model,descreption,category,price,quantity)
+//     })
+//     articles.push(article)
     
-}
+// }
 /*
 
 }
@@ -200,11 +217,17 @@ function creatDivFacturation(){
 */
 
 ///////// little function ////////
-function divarticle(){
-     var divArticle=$('<div class="box">ARTICLE</div>')
-     var titleArticle=$('<h1 ">title</h1>')
-     var priceAricle=$('<h2 id="price" type="text">price</h2>')
+function divarticle(i){
+     var divArticle=$('<div class=box>ARTICLE</div>')
+     
+     var titleArticle=$('<h1 class=title>title</h1>')
+     titleArticle.text(articles[i].model+" "+articles[i].brand)
+     var priceAricle=$('<h2 class=price type="text">price</h2>')
+     $(priceAricle).text(articles[i].price)
+
      var descArticle=('<p></p>')
+     $(descArticle).text(articles[i].descreption)
+
      var buy=('<button>BUY</button>')
      $(divArticle).append(titleArticle,descArticle,priceAricle,buy)
      return divArticle
@@ -214,17 +237,27 @@ function divarticle(){
 //////////Data Modeling///////////
 */
 
-var clients=[]
-var articles=[]
+var clients=[{name:'khalil',
+    mail:'khalilmedkraiem@gmail.com',
+    telephone:'52701262',
+    password:'11019029',
+    username:'khalil'}]
 
-function makeArticle(){
+article1=makeArticle("nikon","D610","full frame camera","dslr",3000,6)
+article2=makeArticle("canon","6D","full frame camera","dslr",3000,6)
+article3=makeArticle("sony","alpha7II","full frame camera","slr",3000,6)
+article4=makeArticle("sony","NX5","full frame camera","camescope",3000,6)
+article5=makeArticle("godox","660TT","full frame camera","flash",3000,6)
+article6=makeArticle("aputure","TX1S","full frame camera","trigger",3000,6)
+var articles=[article1,article2,article3,article4,article5,article6]
+function makeArticle(brand,model,descreption,category,price,quantity){
     return{
         brand:brand,
         model:model,
         descreption:descreption,
         category:category,
         price:price,
-        quatity:quatity,
+        quantity:quantity,
         ajouterNewQuantity:inc,
         modifierPrice:modifierPrice
 
@@ -242,7 +275,7 @@ function makeclient(name,mail,telephone,password,username){
         mail:mail,
         telephone:telephone,
         password:password,
-        username:username,
+        username:username
         }
 }
 
